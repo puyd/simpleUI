@@ -8,206 +8,27 @@
     <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
     <meta http-equiv="Cache-Control" content="no-siteapp" />
 
-    
+
     <script src="lib/jquery-3.3.1/jquery-3.3.1.min.js"></script>
 
     <link rel="Bookmark" href="favicon.ico">
     <link rel="Shortcut Icon" href="favicon.ico" />
 
     <link rel="stylesheet" type="text/css" href="site.css" />
+    <link rel="stylesheet" type="text/css" href="console.css" />
 
     <title>Simple UI - Console</title>
 
-    <style type="text/css">
-        .topbar {
-            background-color: #373d41;
-            height: 50px;
-            width: 100%;
-        }
-
-        .topbar .left {
-            float: left;
-        }
-
-        .topbar .right {
-            float: right;
-        }
-
-        .topbar .area {
-            line-height: 50px;
-            height: 50px;
-            margin: 0px 2px;
-            display: inline-block;
-            vertical-align: middle;
-            color: white;
-            text-align: center;
-            font-size: 14px;
-            padding: 0px 12px;
-            cursor: pointer;
-            color: lightgrey;
-        }
-
-        .topbar .area:hover {
-            background: #2a2f32;
-            color: white;
-        }
-
-        .topbar .area a {
-            color: lightgrey;
-            text-decoration-line: none;
-        }
-
-        .topbar .area a:hover {
-            color: white;
-        }
-
-        .topbar .logo {
-            width: 50px;
-            height: 50px;
-            padding: 4px;
-        }
-
-        .topbar .logo a,
-        .topbar .notice a {
-            display: block;
-            position: relative;
-
-        }
-
-        .topbar .notice i {
-            vertical-align: middle;
-            font-size: 24px;
-            color: lightgray;
-        }
-
-        .topbar .notice-num {
-            font-size: 12px;
-            color: #fff;
-            background: #f90;
-            border-radius: 5px;
-            padding: 2px 5px;
-            display: inline-block;
-            margin-top: 15px;
-            line-height: 16px;
-            vertical-align: top;
-            text-align: center;
-        }
-
-        .topbar .user {
-            width: 36px;
-            height: 36px;
-            border-radius: 18px;
-            vertical-align: middle;
-        }
-
-        .sidebar {
-            position: fixed;
-            width: 180px;
-            top: 50px;
-            bottom: 0;
-            left: 0;
-            background-color: #333744;
-            z-index: 109;
-        }
-
-        .sidebar .fold {
-            height: 30px;
-            width: 100%;
-            background: #4a5064;
-            color: lightgray;
-            text-align: center;
-            line-height: 30px!important;
-            font-size: 12px;
-            cursor: pointer;
-        }
-
-        .sidebar .fold:hover {
-            color: white;
-        }
-
-        .sidebar .nav {
-            width: 100%;
-            overflow-x: hidden;
-            overflow-y: auto;
-        }
-
-        .sidebar .title {
-            line-height: 40px;
-            cursor: pointer;
-            color: lightgray
-        }
-
-        .sidebar .title:hover,
-        .sidebar a:hover {
-            color: white;
-        }
-
-        .sidebar i {
-            margin: 0 8px 0 20px;
-            vertical-align: middle;
-        }
-
-        .sidebar .nav{
-            overflow: hidden;
-        }
-
-        .sidebar .nav ul {
-            list-style: none;
-            width: 200px;
-            margin: 0px;
-            padding: 0px;
-            transition: height 0.2s ease;   
-        }
-
-        .sidebar .nav li{
-            line-height: 40px;
-            margin-left: 2px;
-            padding: 0px;
-        }
-
-        .sidebar .nav ul a {
-            display: block;
-            width: 100%;
-            color: lightgray;
-            text-decoration-line: none;
-        }
-        .sidebar .nav ul a:hover{
-            color: white;
-        }
-
-        .sidebar .nav.collapse{
-            display:block;
-        }
-        .sidebar .nav.collapse ul{
-            height: 0px!important;
-        }
-
-        .frame {
-            position: absolute;
-            top: 50px;
-            bottom: 0px;
-            background-color: #000;
-            z-index: 100;
-        }
-    </style>
-
     <script>
-        function navClick(nav)
-        {
-            if ($(nav).hasClass("collapse")){
-                $(".nav").addClass("collapse");
-                $(".nav .title i").removeClass("fa-rotate-90");
-                
-                $(nav).removeClass("collapse");
-                $(nav).find(".title i").addClass("fa-rotate-90");
-            }
-            else {
-                $(nav).addClass("collapse");
-                $(nav).find(".title i").removeClass("fa-rotate-90");
-            }
-        }
-    
+        $(function () {
+            $(".topbar .area").hover(function (e) {
+                $(".topbar .area").addClass("hide-menu");
+                $(e.target).removeClass("hide-menu");
+            });
+
+        })
     </script>
+
 </head>
 
 <body>
@@ -223,9 +44,25 @@
             <div class="area">
                 <a href="console.html">管理控制台</a>
             </div>
+
+            <div class="area">
+                <a href="console.html">管理控制台</a>
+            </div>
+
+            <div class="area">
+                <a href="console.html">管理控制台</a>
+            </div>
         </div>
 
         <div class="right">
+            <div class="area">
+                <div class="search" id="topbarSearch">
+                    <input type="text" placeholder="搜索" onfocus="$(topbarSearch).addClass('active')" onblur="$(topbarSearch).removeClass('active')"
+                    />
+                    <i class="fas fa-search"></i>
+                </div>
+            </div>
+
             <div class="area notice">
                 <a href="#">
                     <i class="fas fa-bell"></i>
@@ -233,14 +70,102 @@
                 </a>
             </div>
 
-            <div class="area">费用</div>
-            <div class="area">工单</div>
-            <div class="area">备案</div>
-            <div class="area">企业</div>
-            <div class="area">支持</div>
-            <div class="area">简体中文</div>
-            <div class="area">
+            <div class="area hide-menu">
+                <a href="#">费用</a>
+                <ul style="height:160px">
+                    <li>
+                        <a href="#">充值</a>
+                    </li>
+                    <li>
+                        <a href="#">充值</a>
+                    </li>
+                    <li>
+                        <a href="#">充值</a>
+                    </li>
+                    <li>
+                        <span class="separ"></span>
+                        <a href="#">充值</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="area hide-menu">
+                <a href="#">费用</a>
+                <ul style="height:160px">
+                    <li>
+                        <a href="#">充值</a>
+                    </li>
+                    <li>
+                        <a href="#">充值</a>
+                    </li>
+                    <li>
+                        <a href="#">充值</a>
+                    </li>
+                    <li>
+                        <span class="separ"></span>
+                        <a href="#">充值</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="area hide-menu">
+                <a href="#">费用</a>
+                <ul style="height:120px">
+                    <li>
+                        <a href="#">充值</a>
+                    </li>
+                    <li>
+                        <a href="#">充值</a>
+                    </li>
+                    <li>
+                        <span class="separ"></span>
+                        <a href="#">充值</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="area hide-menu">
                 <img class="user" src="./res/default_handsome.jpg" />
+                <div class="user-panel">
+                    <div class="top">
+                        <img class="user" src="./res/default_handsome.jpg" />
+                        <p>puyd@163.com</p>
+                    </div>
+                    <div class="body">
+                        <a href="#">
+                            <i class="fas fa-address-card"></i>
+                            <span>基本资料</span>
+                        </a>
+
+                        <a href="#">
+                            <i class="fas fa-address-card"></i>
+                            <span>基本资料</span>
+                        </a>
+
+                        <a href="#">
+                            <i class="fas fa-address-card"></i>
+                            <span>基本资料</span>
+                        </a>
+
+                        <a href="#">
+                            <i class="fas fa-address-card"></i>
+                            <span>基本资料</span>
+                        </a>
+                        <a href="#">
+                            <i class="fas fa-address-card"></i>
+                            <span>基本资料</span>
+                        </a>
+                        <a href="#">
+                            <i class="fas fa-address-card"></i>
+                            <span>基本资料</span>
+                        </a>
+
+                    </div>
+                    <div class="bottom">
+                        <a href="index.html">退出管理控制台</a>
+                    </div>
+
+                </div>
             </div>
         </div>
 
@@ -251,10 +176,10 @@
             <i class="fas fa-bars fa-rotate-90"></i>
         </div>
 
-        <div class="nav" id="nav01">
+        <div class="nav">
 
-            <div class="title" onclick="navClick(nav01)">
-                <i class="fas fa-caret-right fa-rotate-90"></i>
+            <div class="title" onclick="$(this).parent('.nav').toggleClass('collapse')">
+                <i class="fas fa-caret-right"></i>
                 <span class="sidebar-title-text">云计算基础服务</span>
                 <span class="sidebar-manage">
                     <a class="topbar-sidebar-setup"></a>
@@ -295,16 +220,16 @@
             </ul>
         </div>
 
-        <div class="nav collapse" id="nav02">
-        
-            <div class="title" onclick="navClick(nav02)">
+        <div class="nav collapse">
+
+            <div class="title" onclick="$(this).parent('.nav').toggleClass('collapse')">
                 <i class="fas fa-caret-right"></i>
                 <span class="sidebar-title-text">大数据（数加）</span>
                 <span class="sidebar-manage">
                     <a class="topbar-sidebar-setup"></a>
                 </span>
             </div>
-        
+
             <ul style="height:100px;">
                 <li>
                     <a href="#">
