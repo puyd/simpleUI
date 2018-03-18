@@ -40,7 +40,7 @@
     color: white;
 }
 
-.topbar .area>ul{
+.topbar .area>ul {
     position: absolute;
     list-style: none;
     top: 100%;
@@ -56,18 +56,17 @@
     transition: height 0.2s ease;
 }
 
-.topbar .area.hide-menu>ul{
+.topbar .area.hide-menu>ul {
     border: none;
-    height:0!important;
-    
+    height: 0!important;
 }
 
-.topbar .area>ul>li{
+.topbar .area>ul>li {
     position: relative;
     line-height: 40px;
 }
 
-.topbar .area>ul>li>.separ{
+.topbar .area>ul>li>.separ {
     display: block;
     position: absolute;
     top: 0px;
@@ -77,13 +76,13 @@
     background: lightgray;
 }
 
-.topbar .area>ul>li>a{
+.topbar .area>ul>li>a {
     display: block;
     padding: 0px 16px;
     color: black;
 }
 
-.topbar .area>ul>li>a:hover{
+.topbar .area>ul>li>a:hover {
     background-color: lightgray;
     color: black;
 }
@@ -94,11 +93,9 @@
     padding: 4px;
 }
 
-.topbar .logo a,
-.topbar .notice a {
+.topbar .logo a, .topbar .notice a {
     display: block;
     position: relative;
-
 }
 
 .topbar .notice i {
@@ -120,6 +117,116 @@
     text-align: center;
 }
 
+.topbar .area .notice-panel {
+    position: absolute;
+    display: block;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 300px;
+    border: 1px solid lightgray;
+    transition: height 0.2s ease;
+}
+
+.topbar .area .notice-panel .arrow {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-bottom: 6px solid #eaedf1;
+    top: -6px;
+}
+
+.topbar .area .notice-panel .wrap {
+    display: block;
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    transition: height 0.2s ease;
+}
+
+.topbar .area.hide-menu .notice-panel {
+    border: none;
+}
+
+.topbar .area.hide-menu .notice-panel .arrow {
+    display: none;
+}
+
+.topbar .area.hide-menu .notice-panel .wrap {
+    height: 0px;
+}
+
+.topbar .area .notice-header {
+    height: 50px;
+    background-color: #eaedf1;
+    padding: 0 15px;
+    line-height: 50px;
+    color: #333;
+    font-size: 14px;
+}
+
+.topbar .area .notice-header span{
+    display: block-inline;
+    float: left;
+}
+
+.topbar .area .notice-header a{
+    display: block-inline;
+    float: right;
+    font-size: 13px;
+    color: darkturquoise;
+}
+
+.topbar .area .notice-panel .wrap ul{
+    display: block;
+    width: 100%;
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+    overflow: hidden;
+}
+
+.topbar .area .notice-panel li a{
+    display: block;
+    width: 100%;
+    padding: 0px 15px;
+    overflow: hidden;
+    text-align: left;
+    line-height: 25px;
+    font-size: 12px;
+    border-bottom: 1px solid lightgray;
+}
+
+.topbar .area .notice-link{
+    display: block;
+    color: darkturquoise;
+    width: 100%;
+    white-space:nowrap;  
+}
+
+.topbar .area .notice-time{
+    display: block;
+    width: 100%;
+    color: black;
+    text-align: right;
+}
+
+.topbar .area .notice-panel .bottom{
+    display: block;
+    width: 100%;
+    background: #eaedf1;
+    height: 50px;
+    line-height: 50px;
+}
+
+.topbar .area .notice-panel .bottom a{
+    color: darkturquoise;
+    font-size: 14px;
+    text-decoration-style: none;
+}
+
 .topbar .area .user {
     width: 36px;
     height: 36px;
@@ -127,98 +234,96 @@
     vertical-align: middle;
 }
 
-.topbar .area .user-panel{
+.topbar .area .user-panel {
     position: absolute;
     display: block;
-    top:100%;
+    top: 100%;
     right: 0px;
     width: 270px;
     height: 310px;
     border: 1px solid lightgray;
+    background-color: white;
     overflow: hidden;
     transition: height 0.2s ease;
 }
 
-.topbar .area.hide-menu .user-panel{
+.topbar .area.hide-menu .user-panel {
     height: 0px!important;
     border: none;
 }
 
-.topbar .area .user-panel .top{
+.topbar .area .user-panel .top {
     display: block;
-    width:100%;
+    width: 100%;
     line-height: 50px;
     cursor: default;
 }
 
-.topbar .area .user-panel .top p{
+.topbar .area .user-panel .top p {
     line-height: 12px;
     font-size: 12px;
     color: black;
 }
 
-.topbar .area .user-panel .body{
+.topbar .area .user-panel .body {
     display: block;
-    width:100%;
+    width: 100%;
     padding: 2px;
     text-align: center;
     border-top: 1px solid lightgray;
     border-bottom: 1px solid lightgray;
 }
 
-.topbar .area .user-panel .body a{
+.topbar .area .user-panel .body a {
     display: inline-block;
     width: 30%;
     padding: 8px;
     color: #808080;
 }
 
-.topbar .area .user-panel .body a i{
+.topbar .area .user-panel .body a i {
     display: block;
     font-size: 24px;
     line-height: 50px;
 }
 
-.topbar .area .user-panel .body a span{
+.topbar .area .user-panel .body a span {
     display: block;
     font-size: 12px;
     line-height: 16px;
 }
 
-.topbar .area .user-panel .body a:hover{
+.topbar .area .user-panel .body a:hover {
     background-color: #f5f5f5;
 }
 
-.topbar .area .user-panel .bottom{
+.topbar .area .user-panel .bottom {
     display: block;
-    width:100%;
+    width: 100%;
     background: lightgray;
     height: 50px;
     line-height: 50px;
 }
 
-.topbar .area .user-panel .bottom a{
+.topbar .area .user-panel .bottom a {
     color: #808080;
 }
 
-.topbar .area .user-panel .bottom a:hover{
+.topbar .area .user-panel .bottom a:hover {
     color: black;
 }
 
-
-.topbar .search{
+.topbar .search {
     width: 160px;
     position: relative;
     line-height: 26px;
-    border:1px solid darkgrey;
+    border: 1px solid darkgrey;
     margin: 12px 0px;
     text-align: left;
     transition: width 0.2s ease;
 }
 
-.topbar .search:hover,
-.topbar .search.active
-{
+.topbar .search:hover, .topbar .search.active {
     border-color: aqua;
     background: black;
     width: 280px;
@@ -235,7 +340,7 @@
     color: #fff;
 }
 
-.topbar .search i{
+.topbar .search i {
     position: absolute;
     right: 0px;
     top: 0px;
@@ -244,13 +349,13 @@
     font-size: 12px;
     line-height: 26px;
     text-align: center;
-    border-left: 1px solid darkgray;;
+    border-left: 1px solid darkgray;
+    ;
 }
 
-.topbar .search:hover i{
+.topbar .search:hover i {
     color: white;
 }
-
 
 .sidebar {
     position: fixed;
@@ -290,8 +395,7 @@
     color: lightgray
 }
 
-.sidebar .title:hover,
-.sidebar a:hover {
+.sidebar .title:hover, .sidebar a:hover {
     color: white;
 }
 
@@ -325,14 +429,12 @@
     text-decoration-line: none;
 }
 
-.sidebar .nav ul a:hover,
-.sidebar .nav ul a.active
-{
+.sidebar .nav ul a:hover, .sidebar .nav ul a.active {
     color: white;
     background-color: rgb(0, 193, 222);
 }
 
-.sidebar .nav .title i{
+.sidebar .nav .title i {
     transform: rotate(90deg);
 }
 
@@ -344,10 +446,9 @@
     height: 0px!important;
 }
 
-.sidebar .nav.nav.collapse .title i{
+.sidebar .nav.nav.collapse .title i {
     transform: rotate(0deg);
 }
-
 
 .frame {
     position: absolute;
