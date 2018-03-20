@@ -130,8 +130,7 @@
     background-color: white;
     display: block;
     top: 100%;
-    left: 50%;
-    transform: translateX(-50%);
+    right: 0px;
     width: 300px;
     border: 1px solid lightgray;
     transition: height 0.2s ease;
@@ -139,8 +138,8 @@
 
 .topbar .area .notice-panel .arrow {
     position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+    right: 0px;
+    transform: translateX(-200%);
     border-left: 6px solid transparent;
     border-right: 6px solid transparent;
     border-bottom: 6px solid #eaedf1;
