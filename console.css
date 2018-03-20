@@ -127,6 +127,7 @@
 
 .topbar .area .notice-panel {
     position: absolute;
+    background-color: white;
     display: block;
     top: 100%;
     left: 50%;
