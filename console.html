@@ -21,14 +21,39 @@
 
     <script>
         $(function () {
-            $(".topbar .area").hover(function (e) {
+            $(".topbar .area").hover((e)=>{
                 var t=e.currentTarget;
                 $(t).removeClass("hide-menu");
             });
 
-            $(".topbar .area").mouseleave(function(e){
+            $(".topbar .area").mouseleave((e)=>{
                 var t=e.currentTarget;
                 $(t).addClass("hide-menu")
+            });
+
+            $(".topbar .area>ul").each((idx,elem)=>{
+                var ul=$(elem);
+                var cnt=ul.children("li").length;
+                var h=cnt*40;
+                ul.css("height",h+"px");
+            });
+
+            
+            $(".sidebar .nav>ul").each((idx,elem)=>{
+                var ul=$(elem);
+                var cnt=ul.children("li").length;
+                var h=cnt*40;
+                ul.css("height",h+"px");
+            });
+
+            $(".sidebar .nav>.title").click((e)=>{
+                var nav=$(e.currentTarget).parent('.nav');
+                var o=nav.hasClass('collapse');
+                $(".sidebar .nav").addClass('collapse');
+                if (o){
+                    nav.removeClass('collapse');
+                }
+                
             });
 
         })
@@ -41,15 +66,20 @@
         <div class="left">
             <div class="area logo">
                 <a href="index.html">
+                    <img src="res/logo-nav.png" style="position: relative; top:-5px"/>
+                    <span>律政派拓源</span>
+                    <!-- 
                     <i class="fas fa-square" style="color:darkgray; font-size:42px; position:absolute; left:0px; top:0px;"></i>
-                    <i class="far fa-star" style="color:black; font-size:32px; position:absolute; left:0px; top:5px; "></i>
+                    <i class="far fa-star" style="color:black; font-size:32px; position:absolute; left:0px; top:5px; "></i> 
+                    -->
                 </a>
             </div>
 
             <div class="area">
-                <a href="console.html">管理控制台</a>
+                <a href="console.html">首页</a>
             </div>
 
+            <!--
             <div class="area">
                 <a href="console.html">管理控制台</a>
             </div>
@@ -57,6 +87,7 @@
             <div class="area">
                 <a href="console.html">管理控制台</a>
             </div>
+            -->
         </div>
 
         <div class="right">
@@ -117,55 +148,55 @@
             </div>
 
             <div class="area hide-menu">
-                <a href="#">费用</a>
+                <a href="#">快捷菜单</a>
                 <ul style="height:160px">
                     <li>
-                        <a href="#">充值</a>
+                        <a href="#">快捷方式1</a>
                     </li>
                     <li>
-                        <a href="#">充值</a>
+                        <a href="#">快捷方式2</a>
                     </li>
                     <li>
-                        <a href="#">充值</a>
+                        <a href="#">快捷方式3</a>
                     </li>
                     <li>
                         <span class="separ"></span>
-                        <a href="#">充值</a>
+                        <a href="#">快捷方式4</a>
                     </li>
                 </ul>
             </div>
 
             <div class="area hide-menu">
-                <a href="#">费用</a>
+                <a href="#">快捷菜单</a>
                 <ul style="height:160px">
                     <li>
-                        <a href="#">充值</a>
+                        <a href="#">快捷方式1</a>
                     </li>
                     <li>
-                        <a href="#">充值</a>
+                        <a href="#">快捷方式2</a>
                     </li>
                     <li>
-                        <a href="#">充值</a>
+                        <a href="#">快捷方式3</a>
                     </li>
                     <li>
                         <span class="separ"></span>
-                        <a href="#">充值</a>
+                        <a href="#">快捷方式4</a>
                     </li>
                 </ul>
             </div>
 
             <div class="area hide-menu">
-                <a href="#">费用</a>
+                <a href="#">快捷菜单</a>
                 <ul style="height:120px">
                     <li>
-                        <a href="#">充值</a>
+                        <a href="#">快捷方式1</a>
                     </li>
                     <li>
-                        <a href="#">充值</a>
+                        <a href="#">快捷方式2</a>
                     </li>
                     <li>
                         <span class="separ"></span>
-                        <a href="#">充值</a>
+                        <a href="#">快捷方式3</a>
                     </li>
                 </ul>
             </div>
@@ -224,80 +255,121 @@
 
         <div class="nav">
 
-            <div class="title" onclick="$(this).parent('.nav').toggleClass('collapse')">
+            <div class="title">
                 <i class="fas fa-caret-right"></i>
-                <span class="sidebar-title-text">云计算基础服务</span>
-                <span class="sidebar-manage">
-                    <a class="topbar-sidebar-setup"></a>
-                </span>
+                <span class="sidebar-title-text">专利检索</span>
             </div>
 
-            <ul style="height:200px;">
+            <ul>
                 <li>
                     <a href="#">
                         <i class="far fa-bookmark"></i>
-                        <span>云服务器 ECS&nbsp;</span>
+                        <span>简单检索</span>
                     </a>
                 </li>
                 <li>
                     <a href="#">
                         <i class="far fa-bookmark"></i>
-                        <span>云服务器 ECS&nbsp;</span>
+                        <span>高级检索</span>
                     </a>
                 </li>
                 <li>
                     <a href="#">
                         <i class="far fa-bookmark"></i>
-                        <span>云服务器 ECS&nbsp;</span>
+                        <span>检索文件夹</span>
                     </a>
                 </li>
                 <li>
                     <a href="#">
                         <i class="far fa-bookmark"></i>
-                        <span>云服务器 ECS&nbsp;</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="far fa-bookmark"></i>
-                        <span>云服务器 ECS&nbsp;</span>
+                        <span>专有库</span>
                     </a>
                 </li>
             </ul>
         </div>
 
         <div class="nav collapse">
-
-            <div class="title" onclick="$(this).parent('.nav').toggleClass('collapse')">
+            <div class="title">
                 <i class="fas fa-caret-right"></i>
-                <span class="sidebar-title-text">大数据（数加）</span>
-                <span class="sidebar-manage">
-                    <a class="topbar-sidebar-setup"></a>
-                </span>
+                <span class="sidebar-title-text">专利报告</span>
             </div>
-
-            <ul style="height:100px;">
-                <li>
-                    <a href="#">
-                        <i class="far fa-bookmark"></i>
-                        <span>云服务器 ECS&nbsp;</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="far fa-bookmark"></i>
-                        <span>云服务器 ECS&nbsp;</span>
-                    </a>
-                </li>
+            <ul>
+                <li><a href="#"><i class="far fa-bookmark"></i><span>报告文件夹</span></a></li>
+                <li><a href="#"><i class="far fa-bookmark"></i><span>报告上传</span></a></li>
             </ul>
         </div>
 
+        <div class="nav collapse">
+            <div class="title">
+                <i class="fas fa-caret-right"></i>
+                <span class="sidebar-title-text">案件管理</span>
+            </div>
+            <ul>
+                <li><a href="#"><i class="far fa-bookmark"></i><span>案件处置</span></a></li>
+                <li><a href="#"><i class="far fa-bookmark"></i><span>案件进展</span></a></li>
+                <li><a href="#"><i class="far fa-bookmark"></i><span>案件费用</span></a></li>
+                <li><a href="#"><i class="far fa-bookmark"></i><span>案件评价</span></a></li>
+                <li><a href="#"><i class="far fa-bookmark"></i><span>售后服务</span></a></li>
+                <li><a href="#"><i class="far fa-bookmark"></i><span>统计分析</span></a></li>
+            </ul>
+        </div>
+
+        <div class="nav collapse">
+            <div class="title">
+                <i class="fas fa-caret-right"></i>
+                <span class="sidebar-title-text">文章管理</span>
+            </div>
+            <ul>
+                <li><a href="#"><i class="far fa-bookmark"></i><span>文章发布</span></a></li>
+                <li><a href="#"><i class="far fa-bookmark"></i><span>图片管理</span></a></li>
+                <li><a href="#"><i class="far fa-bookmark"></i><span>文件管理</span></a></li>
+                <li><a href="#"><i class="far fa-bookmark"></i><span>问答互动</span></a></li>
+            </ul>
+        </div>
+
+        <div class="nav collapse">
+            <div class="title">
+                <i class="fas fa-caret-right"></i>
+                <span class="sidebar-title-text">会员资料</span>
+            </div>
+            <ul>
+                <li><a href="#"><i class="far fa-bookmark"></i><span>基本资料</span></a></li>
+                <li><a href="#"><i class="far fa-bookmark"></i><span>实名认证</span></a></li>
+                <li><a href="#"><i class="far fa-bookmark"></i><span>联系方法</span></a></li>
+                <li><a href="#"><i class="far fa-bookmark"></i><span>账户安全</span></a></li>
+                <li><a href="#"><i class="far fa-bookmark"></i><span>账户绑定</span></a></li>
+                <li><a href="#"><i class="far fa-bookmark"></i><span>会员积分</span></a></li>
+                <li><a href="#"><i class="far fa-bookmark"></i><span>我的任务</span></a></li>
+                <li><a href="#"><i class="far fa-bookmark"></i><span>消息邮件</span></a></li>
+            </ul>
+        </div>
+
+        <div class="nav collapse">
+            <div class="title">
+                <i class="fas fa-caret-right"></i>
+                <span class="sidebar-title-text">系统维护</span>
+            </div>
+            <ul>
+                <li><a href="#"><i class="far fa-bookmark"></i><span>会员维护</span></a></li>
+                <li><a href="#"><i class="far fa-bookmark"></i><span>角色设置</span></a></li>
+                <li><a href="#"><i class="far fa-bookmark"></i><span>授权项目</span></a></li>
+                <li><a href="#"><i class="far fa-bookmark"></i><span>会员任务</span></a></li>
+                <li><a href="#"><i class="far fa-bookmark"></i><span>宣传图片</span></a></li>
+                <li><a href="#"><i class="far fa-bookmark"></i><span>主营业务</span></a></li>
+                <li><a href="#"><i class="far fa-bookmark"></i><span>友情链接</span></a></li>
+            </ul>
+        </div>
+
+        
 
     </div>
 
     <div class="frame">
-        3
+        <iframe src="desktop.html" style="width:100%;height:800px" frameborder="0">
+        
+        </iframe>
     </div>
+    
 </body>
 
 </html>

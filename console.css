@@ -1,4 +1,6 @@
 .topbar {
+    position: fixed;
+    top: 0px;
     background-color: #373d41;
     height: 50px;
     width: 100%;
@@ -88,9 +90,15 @@
 }
 
 .topbar .logo {
-    width: 50px;
+    width: auto;
     height: 50px;
     padding: 4px;
+}
+
+.topbar .logo span {
+    font-weight: bold;
+    font-size: 18px;
+    color: white;
 }
 
 .topbar .logo a, .topbar .notice a {
@@ -365,7 +373,7 @@
     left: 0;
     background-color: #333744;
     z-index: 109;
-    overflow: hidden;
+    overflow: auto;
 }
 
 .sidebar .fold {
@@ -418,7 +426,7 @@
 
 .sidebar .nav li {
     line-height: 40px;
-    margin-left: 2px;
+    margin-left: 6px;
     padding: 0px;
 }
 
@@ -451,9 +459,6 @@
 }
 
 .frame {
-    position: absolute;
-    top: 50px;
-    bottom: 0px;
-    background-color: #000;
-    z-index: 100;
+    padding-left: 180px;
+    width: 100%;
 }
