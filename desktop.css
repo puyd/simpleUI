@@ -20,9 +20,10 @@
 
 .pat-module .main .cell{
     display: inline-block;
-    width: 300px;
+    width: 32%;
+    min-width:300px;
     height: 240px;
-    margin: 10px 0px;
+    margin: 0.5% 0px;
     text-align: center;
     border: #00a2ca solid 1px;
     vertical-align: top;
@@ -31,7 +32,7 @@
 .pat-module .main .cell>a{
     display: block;
     width: 100px;
-    margin: 0px auto;
+    margin: 10px auto;
     text-decoration: none;
 }
 
