@@ -1,7 +1,26 @@
+.bgnormal{
+    background-color: #003366;
+}
+
+.bgdark{
+    background-color: #001133;
+}
+
+.bghover{
+    background-color: #003366;
+}
+
+.bghover:hover{
+    background-color: #001133;
+}
+
+.bglight{
+    background-color: #004488;
+}
+
 .topbar {
     position: fixed;
     top: 0px;
-    background-color: #373d41;
     height: 50px;
     width: 100%;
 }
@@ -27,10 +46,6 @@
     cursor: pointer;
     color: lightgrey;
     position: relative;
-}
-
-.topbar .area:hover {
-    background: #2a2f32;
 }
 
 .topbar .area a {
@@ -333,7 +348,6 @@
 
 .topbar .search:hover, .topbar .search.active {
     border-color: aqua;
-    background: black;
     width: 280px;
 }
 
@@ -371,7 +385,6 @@
     top: 50px;
     bottom: 0;
     left: 0;
-    background-color: #333744;
     z-index: 109;
     overflow: auto;
 }
@@ -379,7 +392,6 @@
 .sidebar .fold {
     height: 30px;
     width: 100%;
-    background: #4a5064;
     color: lightgray;
     text-align: center;
     line-height: 30px!important;
